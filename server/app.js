@@ -23,7 +23,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/api/", indexRouter);
 app.use("/api/users", usersRouter);
 // If in production, then use static frontend build files.
-if (process.env.NODE_ENV === "production") {
+if (process.env.NODE_ENV !== "production") {
   // Serve any static files
   app.use(express.static(path.join(__dirname, "../client/build")));
 
